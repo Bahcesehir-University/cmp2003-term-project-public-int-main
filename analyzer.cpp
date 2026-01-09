@@ -17,9 +17,6 @@ void TripAnalyzer::ingestFile(const std::string& csvPath) {
     std::ifstream file(csvPath);
     if (!file.is_open()) return;
 
-    static char ioBuffer[1 << 23]; // 8 MB buffer
-    file.rdbuf()->pubsetbuf(ioBuffer, sizeof(ioBuffer));
-
     std::string line;
     bool headerSkipped = false;
 
@@ -130,3 +127,4 @@ std::vector<SlotCount> TripAnalyzer::topBusySlots(int k) const {
 
     return result;
 }
+
