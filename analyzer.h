@@ -25,7 +25,8 @@ private:
 
 public:
     void ingestFile(const std::string& csvPath);
-    std::vector<ZoneCount> topZones(int k =) const;
-    std::vector<SlotCount> topBusySlots(int k) const;
+    std::vector<ZoneCount> topZones(int k = 10) const;
+    std::vector<SlotCount> topBusySlots(int k = 10) const;
 };
+
 
